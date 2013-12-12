@@ -27,6 +27,12 @@ module Citibike
       erb :form
     end
 
+    post '/form' do
+      @start = params["start"]
+      @end = params["end"]
+      erb :results  
+    end
+
   end
 end
 
