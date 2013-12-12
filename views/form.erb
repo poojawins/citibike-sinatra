@@ -1,11 +1,11 @@
 <h1>Map my route!</h1>
-<form action='/form' method="POST">
+<form action='/map' method="POST">
 
 
 <label for="start" name="start">Start:</label>
 <select id="start" name="start">
 	<% @data.each do |hash| %>
-	<option value="<%=hash["name"] %>">
+	<option value="[<%=hash["lat"]/1000000.to_f %>, <%=hash["lng"]/1000000.to_f %>]">
 		<%=hash["name"] %>
 		<br/>
 		</option>
@@ -17,7 +17,7 @@
 <label for=end name="end">End:</label>
 <select id="end" name="end">
 	<% @data.each do |hash| %>
-	<option value="<%=hash["name"] %>">
+	<option value="[<%=hash["lat"]/1000000.to_f %>, <%=hash["lng"]/1000000.to_f %>]">
 		<%=hash["name"] %>
 		<br/>
 		</option>
